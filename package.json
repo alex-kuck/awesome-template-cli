@@ -6,12 +6,15 @@
   "author": "Alex Kucksdorf <alexander.kucksdorf@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@octokit/rest": "^16.34.1",
     "chalk": "^2.4.2",
     "clear": "^0.1.0",
     "clui": "^0.3.6",
     "configstore": "^5.0.0",
     "figlet": "^1.2.4",
+    "glob": "^7.1.6",
     "inquirer": "^7.0.0",
-    "minimist": "^1.2.0"
+    "minimist": "^1.2.0",
+    "nunjucks": "^3.2.0"
   }
 }
