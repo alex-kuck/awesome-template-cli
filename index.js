@@ -6,6 +6,9 @@ const files = require('./lib/files');
 const github = require('./lib/github');
 const inquirer = require('./lib/inquirer');
 const nunjucks = require('./lib/nunjucks');
+const {
+    backendTypes
+} = require('./lib/types');
 
 clear();
 
@@ -27,6 +30,18 @@ async function run() {
     const {
         projectName
     } = await inquirer.askProjectName();
+
+    const {
+        backendType
+    } = await inquirer.askBackendType();
+
+    switch (backendType) {
+        case backendTypes.SPRING_BOOT:
+            console.log('Selected Spring Boot backend');
+            break;
+        default:
+            console.log(`No matching backendType for ${backendType}`);
+    }
 
     const spawnRef = github.cloneTemplateRepo(projectName);
     spawnRef.on('data', data => {
